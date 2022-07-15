@@ -8,10 +8,23 @@ import { ApiService } from '../api.service';
 })
 export class AddCourseComponent implements OnInit {
 
-  constructor() {
+  course={courseTitle:"",
+    courseDescription:"",
+    courseDate:"",
+    courseVenue:"",
+    courseDuration:""}
+
+  constructor(private api:ApiService) {
    }
 
   ngOnInit(): void {
   }
+  Addcourse(){
+    this.api.addcourse(this.course)
+    .subscribe((data)=>{
+    console.log(this.course)
+    alert("Success");
+  })
+}
 
 }
