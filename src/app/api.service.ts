@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  constructor(private http:HttpClient) { }
-  func=()=>{
-    return this.http.get("https://mylinkurcodesapp.herokuapp.com/getcourses")
-}
-addcourse=(course:any)=>{
-  return this.http.post<any>("https://mylinkurcodesapp.herokuapp.com/addcourse",course)
-}
+  constructor(private http: HttpClient) { }
+  func = () => {
+    return this.http.get("http://www.localhost:3000/viewcourse")
+  }
+  addcourse = (course: any) => {
+    return this.http.post<any>("http://www.localhost:3000/addcourse", course)
+  }
 }
